@@ -2,8 +2,8 @@
 
 ### Technology Stacks
 - Typescript
-- ReactJS
-- Redux, Redux-thunk
+- React
+- Redux, Redux-thunk, Redux-toolkit
 
 ### Features
 - Posts
