@@ -1,14 +1,83 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// import { loginState, useUserActions } from "../modules/users";
 
-const NotFound = () => {
+import { Container, Grid, Text, Button } from "../elements";
+
+const Header = (props) => {
+  const isLogin = true;
+
+  if (isLogin) {
     return (
-        <React.Fragment>
-            <div>헤더</div>
-        </React.Fragment>
-    );
+      <React.Fragment>
+        <Container padding="4px 16px">
+          <Grid isFlex>
+            <Grid>
+              <Link to="/">
+                <Text font="Pacifico" margin="0px" size="24px" bold>
+                  community.io
+                </Text>
+              </Link>
+            </Grid>
 
+            <Grid isFlex>
+              <Link to="/signup">
+                <Button backgroundColor="#000" color="#fff">
+                  내정보
+                </Button>
+              </Link>
+              <Link to="/likes">
+                <Button backgroundColor="#000" color="#fff">
+                  알림
+                </Button>
+              </Link>
+              <Button
+                backgroundColor="#000"
+                color="#fff"
+                _onClick={() => {
+                  dispatch();
+                }}
+              >
+                로그아웃
+              </Button>
+            </Grid>
+          </Grid>
+        </Container>
+      </React.Fragment>
+    );
+  } else {
+    return (
+      <React.Fragment>
+        <Container padding="4px 16px">
+          <Grid isFlex>
+            <Grid>
+              <Link to="/">
+                <Text font="'Pacifico', cursive" margin="0px" size="32px">
+                  community.io
+                </Text>
+              </Link>
+            </Grid>
+
+            <Grid isFlex>
+              <Link to="/signup">
+                <Button backgroundColor="#000" color="#fff">
+                  회원가입
+                </Button>
+              </Link>
+              <Link to="/login">
+                <Button backgroundColor="#000" color="#fff">
+                  로그인
+                </Button>
+              </Link>
+            </Grid>
+          </Grid>
+        </Container>
+      </React.Fragment>
+    );
+  }
 };
 
-export default NotFound;
+Header.defaultProps = {};
+
+export default Header;

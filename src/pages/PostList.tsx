@@ -1,20 +1,26 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPosts } from '../modules/posts';
+import React, { useEffect } from "react";
+import Post from "../components/Post";
+import { Container } from "../elements";
+import { useAppDispatch, useAppSelector } from "../redux/lib/reduxHooks";
+import { getPostListAsync, selectPostListState } from "../redux/modules/posts";
 
 const PostList = () => {
-  const dispatch = useDispatch();
-  const myPosts = useSelector((state) => state.postReducer);
-  console.log(myPosts);
+  const { data, status } = useAppSelector(selectPostListState);
+  const dispatch = useAppDispatch();
 
-  React.useEffect(() => {
-    dispatch(getPosts());
-  });
+  useEffect(() => {
+    async function fetchPosts() {
+      dispatch(getPostListAsync());
+    }
+    fetchPosts();
+  }, []);
 
   return (
-    <React.Fragment>
-      <div>포스트 리스트</div>
-    </React.Fragment>
+    <Container>
+      {data.map((p, idx) => {
+        return <Post post={p} key={idx} />;
+      })}
+    </Container>
   );
 };
 
