@@ -8,7 +8,8 @@
 ### Features
 - Posts
     - Show posts
-    - Create post with image and text
-    - Add or cancel post likes
+    - Create post with image and text (ongoing)
+    - Add or cancel post likes (ongoing)
 - Users
-    - Sign-up, login, logout
+    - login, logout
+    - Sign-up (ongoing)
