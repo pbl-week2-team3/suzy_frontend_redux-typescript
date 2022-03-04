@@ -117,10 +117,6 @@ const Post = (props: PostProps) => {
 
           <Grid padding="5px 16px">
             <Grid isFlex>
-              {/* <Grid>
-										<Text bold>댓글 {comments.length}개</Text>
-									</Grid> */}
-
               <Grid isFlex>
                 <Heart
                   active={heartActive}
@@ -132,17 +128,6 @@ const Post = (props: PostProps) => {
               </Grid>
             </Grid>
           </Grid>
-
-          {/* <Grid padding='0px 16px'>
-								<Grid isFlex>
-									<Input width='100%' />
-									<Button>작성</Button>
-								</Grid>
-							</Grid>
-		
-							<Grid padding='16px'>
-								<CommentList comments={comments} />
-							</Grid> */}
         </div>
       );
     } else {
@@ -170,10 +155,6 @@ const Post = (props: PostProps) => {
 
           <Grid padding="5px 16px">
             <Grid isFlex>
-              {/* <Grid>
-										<Text bold>댓글 {comments.length}개</Text>
-									</Grid> */}
-
               <Grid isFlex>
                 <Heart active={false} />
                 <Grid padding="0px 5px">
@@ -182,17 +163,6 @@ const Post = (props: PostProps) => {
               </Grid>
             </Grid>
           </Grid>
-
-          {/* <Grid padding='0px 16px'>
-								<Grid isFlex>
-									<Input width='100%' />
-									<Button>작성</Button>
-								</Grid>
-							</Grid>
-		
-							<Grid padding='16px'>
-								<CommentList comments={comments} />
-							</Grid> */}
         </div>
       );
     }
